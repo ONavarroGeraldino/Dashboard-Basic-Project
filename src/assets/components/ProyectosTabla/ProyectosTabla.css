@@ -1,0 +1,151 @@
+.tabla-container {
+  background: var(--bg-sidebar);
+  color: var(--text-primary);
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: var(--card-shadow);
+  margin-top: 20px;
+}
+
+.tabla-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.tabla-header h3 {
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.proyectos-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.proyectos-tabla th {
+  font-size: 0.75rem;
+  color: #a3aed0;
+  padding: 12px 10px;
+  border-bottom: 1px solid #f4f7fe;
+  letter-spacing: 1px;
+}
+
+.proyectos-tabla td {
+  padding: 16px 10px;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
+.proyecto-nombre {
+  font-weight: 700;
+}
+
+.status-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.proyecto-fecha {
+  color: #718096;
+}
+
+/* Barra de Progreso */
+.progreso-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.progreso-texto {
+  font-size: 0.8rem;
+  font-weight: 700;
+  min-width: 35px;
+}
+
+.progreso-bar-bg {
+  width: 100px;
+  height: 8px;
+  background: #f4f7fe;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progreso-bar-fill {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  color: #a3aed0;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.btn-icon:hover {
+  background: #f4f7fe;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  background: var(--bg-main);
+  padding: 4px;
+  border-radius: 12px;
+}
+
+.filter-btn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-btn:hover {
+  color: var(--text-primary);
+}
+
+.filter-btn.active {
+  background: var(--bg-sidebar);
+  color: var(--accent-color);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem !important;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .header-left {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .filter-buttons {
+    overflow-x: auto;
+    width: 100%;
+  }
+}

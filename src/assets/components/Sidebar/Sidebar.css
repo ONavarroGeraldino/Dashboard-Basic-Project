@@ -1,0 +1,107 @@
+.sidebar {
+  width: 260px;
+  height: 100vh;
+  background-color: var(--bg-sidebar); /* Usa la variable de tu index.css */
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  transition: var(--transition);
+}
+
+.sidebar-logo {
+  padding: 2rem;
+  text-align: center;
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.sidebar-nav {
+  flex-grow: 1; /* Empuja el footer hacia abajo */
+  padding: 0 1rem;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-nav li {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #718096; /* Color gris suave por defecto */
+  transition: all 0.2s ease;
+}
+
+.sidebar-nav li:hover {
+  background-color: rgba(67, 24, 255, 0.05);
+  color: var(--accent-color);
+}
+
+.sidebar-nav li.active {
+  background-color: var(--accent-color);
+  color: white;
+  box-shadow: 0px 10px 20px rgba(67, 24, 255, 0.2);
+}
+
+.sidebar-nav .icon {
+  margin-right: 12px;
+  font-size: 1.2rem;
+}
+
+.sidebar-footer {
+  padding: 2rem 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.logout-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: #fff5f5;
+  color: #f56565;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+  display: flex;       /* Añadido para alinear icono */
+  align-items: center; /* Añadido para alinear icono */
+  justify-content: center;
+  gap: 8px;            /* Espacio entre icono y texto */
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background: #f56565;
+  color: white;
+}
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  text-decoration: none; /* Quita el subrayado del enlace */
+  color: #718096;
+  transition: var(--transition);
+}
+
+.sidebar-link:hover {
+  background-color: rgba(67, 24, 255, 0.05);
+  color: var(--accent-color);
+}
+.sidebar-link .icon {
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-link .label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}

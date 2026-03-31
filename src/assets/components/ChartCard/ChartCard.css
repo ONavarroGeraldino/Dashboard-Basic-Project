@@ -1,0 +1,50 @@
+.chart-card {
+  background: var(--bg-sidebar);
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: var(--card-shadow);
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.chart-subtitle {
+  font-size: 0.85rem;
+  color: #a3aed0;
+  font-weight: 600;
+}
+
+.chart-title {
+  font-size: 1.4rem;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.view-report-btn {
+  background: #f4f7fe;
+  color: var(--accent-color);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.view-report-btn:hover {
+  background: var(--accent-color);
+  color: white;
+}
+
+.chart-container {
+  width: 100%;
+  margin-left: -20px; /* Ajuste para que el eje X se vea centrado */
+}
