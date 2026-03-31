@@ -1,25 +1,48 @@
 import React from 'react';
-import Card from '../../assets/components/Card/Card';
-
-import ProyectosTabla from '../../assets/components/ProyectosTabla/ProyectosTabla';
-import { DollarSign, Users, ShoppingCart, Activity } from 'lucide-react';
-import ChartCard from '../../assets/components/ChartCard/ChartCard';
+import { useAuth } from '../../context/AuthContext';
+import { useProjects } from '../../context/ProjectContext';
+import { Users, Briefcase, CheckCircle, Clock } from 'lucide-react';
+import './overView.css';
 
 const Overview = () => {
+  const { users } = useAuth();
+  const { projects } = useProjects();
+
+  // Cálculos dinámicos basados en tus datos reales
+  const totalUsers = users.length;
+  const totalProjects = projects.length;
+  const completedProjects = projects.filter(p => p.status === 'Terminado').length;
+  const pendingProjects = projects.filter(p => p.status === 'En Progreso' || p.status === 'Pendiente').length;
+
+  const stats = [
+    { id: 1, label: 'Usuarios Totales', value: totalUsers, icon: <Users />, color: '#4318ff' },
+    { id: 2, label: 'Proyectos Activos', value: totalProjects, icon: <Briefcase />, color: '#39b8ff' },
+    { id: 3, label: 'Completados', value: completedProjects, icon: <CheckCircle />, color: '#05cd99' },
+    { id: 4, label: 'Pendientes', value: pendingProjects, icon: <Clock />, color: '#ffd500' },
+  ];
+
   return (
-    <div className="animate-in">
-      <div className="dashboard-grid">
-        <Card title="Ganancias" value="$34,250" icon={<DollarSign />} color="#4318ff" />
-        <Card title="Clientes" value="1,245" icon={<Users />} color="#39b8ff" />
-        <Card title="Ventas" value="642" icon={<ShoppingCart />} color="#01b574" />
-        <Card title="Actividad" value="+12.5%" icon={<Activity />} color="#ee5d50" />
+    <div className="overview-container animate-in">
+      <header className="overview-header">
+        <h1>Panel de Control</h1>
+        <p>Bienvenido, aquí tienes el resumen de tu plataforma.</p>
+      </header>
+
+      <div className="stats-grid">
+        {stats.map((stat) => (
+          <div key={stat.id} className="stat-card">
+            <div className="stat-icon" style={{ backgroundColor: `${stat.color}15`, color: stat.color }}>
+              {stat.icon}
+            </div>
+            <div className="stat-info">
+              <span className="stat-label">{stat.label}</span>
+              <h3 className="stat-value">{stat.value}</h3>
+            </div>
+          </div>
+        ))}
       </div>
 
-      <div className="main-charts-container">
-        <ChartCard />
-      </div>
-
-      <ProyectosTabla />
+      {/* Aquí podrías añadir un gráfico pequeño o una lista de actividad reciente */}
     </div>
   );
 };
