@@ -149,3 +149,85 @@
     width: 100%;
   }
 }
+/* --- RESPONSIVE TABLE CONFIGURATION --- */
+
+@media (max-width: 1024px) {
+  .tabla-container {
+    padding: 1rem;
+    overflow: hidden;
+  }
+
+  /* Contenedor con scroll para evitar que la tabla rompa el layout */
+  .tabla-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
+    margin-top: 10px;
+  }
+
+  .proyectos-tabla {
+    min-width: 750px; /* Forzamos un ancho mínimo para mantener la legibilidad */
+  }
+}
+
+@media (max-width: 768px) {
+  .tabla-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .header-left {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  /* Convertimos los filtros en un carrusel deslizable horizontalmente */
+  .filter-buttons {
+    width: 100%;
+    overflow-x: auto;
+    display: flex;
+    padding: 6px;
+    gap: 8px;
+    scrollbar-width: none; /* Oculta scrollbar en Firefox */
+  }
+
+  .filter-buttons::-webkit-scrollbar {
+    display: none; /* Oculta scrollbar en Chrome/Safari */
+  }
+
+  .filter-btn {
+    white-space: nowrap; /* Evita que el texto del botón se divida en dos líneas */
+    flex-shrink: 0;
+  }
+
+  /* Ajuste de celdas para ahorrar espacio */
+  .proyectos-tabla td, 
+  .proyectos-tabla th {
+    padding: 12px 8px;
+    font-size: 0.85rem;
+  }
+
+  .progreso-bar-bg {
+    width: 70px; /* Barra de progreso más corta en móvil */
+  }
+}
+
+@media (max-width: 480px) {
+  .tabla-container {
+    border-radius: 12px;
+    padding: 0.75rem;
+  }
+
+  /* Opcional: Ocultar columnas menos críticas en pantallas muy pequeñas */
+  .proyecto-fecha, 
+  .proyectos-tabla th:nth-child(4), 
+  .proyectos-tabla td:nth-child(4) {
+    display: none; 
+  }
+
+  .tabla-header h3 {
+    font-size: 1.1rem;
+  }
+}

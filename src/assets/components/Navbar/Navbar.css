@@ -121,3 +121,75 @@
   border-radius: 50%;
   object-fit: cover;
 }
+/* --- RESPONSIVE NAVBAR --- */
+
+@media (max-width: 1024px) {
+  .navbar {
+    margin: 0.5rem;
+    padding: 0.8rem 1.2rem;
+  }
+
+  .search-bar {
+    width: 150px; /* Reducimos el buscador en tablets */
+  }
+
+  .user-info {
+    display: none; /* Ocultamos nombre y rol, dejamos solo el avatar */
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    top: 0.5rem;
+    padding: 0.6rem 1rem;
+  }
+
+  /* Ocultamos el buscador y el breadcrumb para ganar espacio */
+  .search-bar, 
+  .breadcrumb {
+    display: none;
+  }
+
+  .nav-title {
+    font-size: 1.1rem; /* Título más pequeño */
+  }
+
+  .navbar-right {
+    gap: 10px;
+    padding: 5px 10px;
+  }
+
+  .user-profile {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .nav-actions {
+    gap: 8px;
+  }
+
+  .theme-toggle-btn {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    margin: 0;
+    border-radius: 0; /* En móviles muy pequeños, que ocupe todo el ancho arriba */
+    top: 0;
+  }
+
+  /* Si tienes un botón de menú (Hamburguesa), asegúrate de que sea visible aquí */
+  .nav-title {
+    max-width: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .nav-btn:not(.theme-toggle-btn) {
+    display: none; 
+  }
+}

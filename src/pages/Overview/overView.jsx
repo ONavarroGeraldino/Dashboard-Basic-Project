@@ -42,7 +42,7 @@ const Overview = () => {
         ))}
       </div>
 
-      {/* Aquí podrías añadir un gráfico pequeño o una lista de actividad reciente */}
+      
     </div>
   );
 };

@@ -43,3 +43,45 @@
   margin: 0;
   font-weight: 700;
 }
+/* --- RESPONSIVE DESIGN --- */
+
+/* Tablets y laptops pequeñas */
+@media (max-width: 1024px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en lugar de 4 */
+    gap: 1.2rem;
+  }
+}
+
+/* Móviles grandes (Vertical) */
+@media (max-width: 768px) {
+  .stats-card {
+    padding: 1.2rem;
+    min-width: unset; /* Quitamos el ancho mínimo para que use el del grid */
+    gap: 1rem;
+  }
+
+  .card-value {
+    font-size: 1.2rem; /* Texto un poco más pequeño */
+  }
+
+  .icon-container {
+    width: 48px; /* Icono un poco más pequeño */
+    height: 48px;
+  }
+}
+
+/* Móviles pequeños (iPhone SE / Android antiguos) */
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr; /* 1 sola columna, tarjetas una debajo de otra */
+  }
+
+  .overview-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .stat-card {
+    justify-content: flex-start;
+  }
+}

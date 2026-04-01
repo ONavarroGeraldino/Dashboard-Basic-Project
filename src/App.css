@@ -89,3 +89,22 @@ body {
   margin: 0;
   font-family: 'Plus Jakarta Sans', sans-serif;
 }
+.hamburger-menu {
+  display: none; /* Oculto en PC */
+}
+
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: flex;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001; /* Por encima de la sidebar */
+    background: var(--bg-sidebar);
+    border: 1px solid var(--border-color);
+    padding: 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: var(--accent-color);
+  }
+}

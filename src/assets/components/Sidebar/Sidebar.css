@@ -105,3 +105,96 @@
   font-weight: 600;
   font-size: 0.95rem;
 }
+
+/* --- CONFIGURACIÓN RESPONSIVE --- */
+
+/* 1. Botón Hamburguesa (Oculto por defecto en escritorio) */
+.hamburger-menu {
+  display: none;
+  background: var(--bg-sidebar);
+  border: 1px solid var(--border-color);
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--accent-color);
+  position: fixed;
+  top: 1.2rem;
+  left: 1rem;
+  z-index: 1001; /* Por encima de todo */
+}
+
+/* 2. Overlay (Fondo oscuro al abrir en móvil) */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+}
+
+/* --- MEDIA QUERIES --- */
+
+/* TABLETS (1024px o menos): Sidebar Colapsada (Solo iconos) */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 80px;
+  }
+
+  .sidebar-logo h2, 
+  .sidebar-link .label, 
+  .logout-btn span {
+    display: none; /* Escondemos textos */
+  }
+
+  .sidebar-nav {
+    padding: 0 0.5rem;
+  }
+
+  .sidebar-link {
+    justify-content: center;
+  }
+
+  .sidebar-link .icon {
+    margin-right: 0;
+  }
+}
+
+/* MÓVILES (768px o menos): Sidebar tipo Drawer (Oculta) */
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: flex; /* Mostramos el botón hamburguesa */
+  }
+
+  .sidebar {
+    position: fixed;
+    left: -260px; /* Totalmente fuera de pantalla */
+    width: 260px;
+    z-index: 1000;
+    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Cuando la sidebar tiene la clase .active */
+  .sidebar.active {
+    left: 0;
+  }
+
+  /* Mostramos textos de nuevo porque aquí la sidebar es ancha */
+  .sidebar.active .sidebar-link .label,
+  .sidebar.active .sidebar-logo h2,
+  .sidebar.active .logout-btn span {
+    display: block;
+  }
+
+  .sidebar-overlay {
+    display: block; /* El overlay solo existe en móvil */
+  }
+
+  /* Ajuste para que el contenido no se pise con el botón hamburguesa */
+  .main-content {
+    padding-top: 60px;
+  }
+}

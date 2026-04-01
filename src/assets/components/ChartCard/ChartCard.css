@@ -48,3 +48,42 @@
   width: 100%;
   margin-left: -20px;
 }
+/* --- RESPONSIVE PARA GRÁFICOS --- */
+
+@media (max-width: 768px) {
+  .chart-card {
+    padding: 1.2rem; /* Reducimos padding interno */
+  }
+
+  .chart-header {
+    flex-direction: column; /* Apilamos título y botón */
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .chart-title {
+    font-size: 1.2rem; /* Ajuste de tamaño de fuente */
+  }
+
+  .chart-container {
+    margin-left: 0; /* Quitamos el margen negativo para evitar desbordamiento */
+    overflow-x: auto; /* Permitimos scroll horizontal si el gráfico es muy ancho */
+  }
+
+  .view-report-btn {
+    width: 100%; /* El botón ocupa todo el ancho en móviles */
+    text-align: center;
+  }
+}
+
+/* Ajustes para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .chart-card {
+    padding: 1rem;
+    border-radius: 15px; /* Bordes un poco más simples */
+  }
+  
+  .chart-subtitle {
+    font-size: 0.75rem;
+  }
+}
