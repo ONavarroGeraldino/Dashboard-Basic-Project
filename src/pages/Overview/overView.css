@@ -41,3 +41,148 @@
   margin: 0;
   font-weight: 700;
 }
+.main-charts-section {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr; /* Gráfica más ancha que la tabla */
+  gap: 20px;
+  margin-top: 25px;
+}
+
+@media (max-width: 1100px) {
+  .main-charts-section {
+    grid-template-columns: 1fr; /* En tablets y móviles, uno debajo del otro */
+  }
+}
+
+.overview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+/* Estilos para que la tabla en el Overview sea más compacta */
+.tabla-container {
+  margin-top: 0; /* Quitamos el margen superior que pusimos antes */
+}
+
+.status-badge.terminado { color: #05cd99; background: rgba(5, 205, 153, 0.1); }
+.status-badge.en-progreso { color: #39b8ff; background: rgba(57, 184, 255, 0.1); }
+.status-badge.pendiente { color: #ffd500; background: rgba(255, 213, 0, 0.1); }
+
+/* --- ESTILOS DE LA TABLA EN OVERVIEW --- */
+
+.tabla-container {
+  background: var(--bg-sidebar);
+  padding: 1.5rem;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+}
+
+.tabla-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.tabla-header h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.proyectos-tabla {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Cabecera de la tabla */
+.proyectos-tabla th {
+  text-align: left;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #a3aed0; /* Gris azulado moderno */
+  padding: 12px 8px;
+  border-bottom: 1px solid #f4f7fe;
+}
+
+/* Celdas de la tabla */
+.proyectos-tabla td {
+  padding: 14px 8px;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  border-bottom: 1px solid #f4f7fe;
+}
+
+.proyectos-tabla tr:last-child td {
+  border-bottom: none; /* Quita la línea al último elemento */
+}
+
+/* Nombre del proyecto resaltado */
+.proyecto-nombre {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Cliente en gris suave */
+.proyectos-tabla td:nth-child(2) {
+  color: #718096;
+}
+
+/* --- BADGES DE ESTADO (Diseño tipo pastilla) --- */
+.status-badge {
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: inline-block;
+  text-align: center;
+}
+
+/* Colores dinámicos para los estados */
+.status-badge.terminado {
+  background-color: rgba(5, 205, 153, 0.1);
+  color: #05cd99;
+}
+
+.status-badge.en-progreso {
+  background-color: rgba(57, 184, 255, 0.1);
+  color: #39b8ff;
+}
+
+.status-badge.pendiente {
+  background-color: rgba(255, 213, 0, 0.1);
+  color: #ffd500;
+}
+
+/* Efecto hover en las filas */
+.proyectos-tabla tr:hover td {
+  background-color: rgba(244, 247, 254, 0.5);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/* Botón de ver más pequeño */
+.btn-icon {
+  background: #f4f7fe;
+  color: var(--accent-color);
+  border: none;
+  padding: 8px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.btn-icon:hover {
+  background: var(--accent-color);
+  color: white;
+  transform: scale(1.05);
+}
